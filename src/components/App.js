@@ -10,9 +10,9 @@ var model = {
 const App = () =>
   <div className='App'>
     <Form model={model} title="User Form">
-      <FormField source={model.email} />
-      <FormField source={model.name_first}/>
-      <FormField source={model.name_last}/>
+      <FormField source="email" />
+      <FormField source="name_first" />
+      <FormField source="name_last" />
     </Form>
   </div>
 
