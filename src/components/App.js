@@ -1,19 +1,32 @@
 import React from 'react'
 import Form from './Form'
 import FormField from './FormField'
-var model = {
-	"email": "chris@shiip.io",
-	"name_first": "Chris",
-	"name_last": "Cai"
-}
+import SelectInput from './SelectInput'
+import SubmitButton from './SubmitButton'
+import hocForm from './hocForm'
+
+const HOCForm = hocForm(Form)
 
 const App = () =>
   <div className='App'>
-    <Form model={model} title="User Form">
-      <FormField source="email" />
-      <FormField source="name_first" />
-      <FormField source="name_last" />
-    </Form>
+    <section className='todoapp'>
+      <HOCForm>
+        <FormField source='email' />
+        <FormField source='name_first' />
+        <FormField source='name_last' />
+        <SelectInput source='status' choices={[
+          {
+            id: 'active',
+            name: 'Active'
+          },
+          {
+            id: 'suspended',
+            name: 'Suspended'
+          }
+        ]} />
+        <SubmitButton source='submit' />
+      </HOCForm>
+    </section>
   </div>
 
 export default App
