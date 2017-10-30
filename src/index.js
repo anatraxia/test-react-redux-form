@@ -4,11 +4,19 @@ import { Provider } from 'react-redux'
 import App from './components/App'
 import 'todomvc-app-css/index.css'
 import { initStore } from './store/store'
-import { initForm } from './actions/form'
+import { createForm } from './actions/form'
+
+const model = {
+  'email': 'chris@shiip.io',
+  'name_first': 'Chris',
+  'name_last': 'Cai',
+  'status': 'active',
+  'submit': 'Submit Form'
+}
 
 const store = initStore()
 
-store.dispatch(initForm)
+store.dispatch(createForm(model))
 
 ReactDOM.render(
   <Provider store={store}>

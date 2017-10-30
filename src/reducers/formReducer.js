@@ -6,9 +6,21 @@ const formReducer = (state = [], action) => {
       return [
         ...state,
         {
-          model: Object.create({}, action.form)
+          model: action.form
         }
       ]
+    case 'UPDATE_FORM':
+      return state.map((formItem, index) => {
+        let newForm
+        if (index === 0) {
+          console.log(formItem)
+          formItem.model[`${action.key}`] = action.value
+          newForm = formItem
+        } else {
+          newForm = {...formItem}
+        }
+        return newForm
+      })
     default:
       return state
   }

@@ -3,9 +3,9 @@ import Form from './Form'
 import FormField from './FormField'
 import SelectInput from './SelectInput'
 import SubmitButton from './SubmitButton'
-import hocForm from './hocForm'
+import HocForm from './hocForm'
 
-const HOCForm = hocForm(Form)
+const HOCForm = HocForm(Form)
 
 const App = () =>
   <div className='App'>

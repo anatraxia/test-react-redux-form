@@ -18,6 +18,7 @@ export class Form extends Component {
     updateModelState = (key, value) => {
       let newModel =this.state.model || {};
       newModel[key] = value;
+      this.props.updateForm(key,value)
 
       this.setState({
         model: newModel,
@@ -67,4 +68,6 @@ export class Form extends Component {
       )
     }
 }
+
+
 export default Form
